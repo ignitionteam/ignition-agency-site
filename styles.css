@@ -1,0 +1,357 @@
+:root {
+  --bg: #000000;
+  --bg-alt: #050505;
+  --accent: #f5a623;
+  --accent-soft: #ffc56a;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --border: #222222;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background: radial-gradient(circle at top, #111111 0, #000000 55%);
+  color: var(--text);
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5vw;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.logo-text {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.logo-sub {
+  margin-left: 0.25rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent-soft);
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  padding: 5rem 5vw 4rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.hero-sub {
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-soft);
+  margin-bottom: 0.75rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.75rem 0 1.5rem;
+}
+
+.hero-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: radial-gradient(circle at top left, var(--accent-soft), var(--accent));
+  color: #000;
+  box-shadow: 0 0 24px rgba(245, 166, 35, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 36px rgba(245, 166, 35, 0.65);
+}
+
+.btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-soft);
+}
+
+/* Hero visual placeholder */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.astro-orbit {
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  border: 1px dashed rgba(245, 166, 35, 0.4);
+  box-shadow: 0 0 40px rgba(245, 166, 35, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.astro-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, var(--accent-soft), var(--accent));
+}
+
+/* SECTIONS */
+.section {
+  padding: 4rem 5vw;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+/* GRID */
+.grid-3 {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: #050505;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+}
+
+.card-highlight {
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 30px rgba(245, 166, 35, 0.4);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.card ul {
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+/* STACK */
+.stack-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.stack-layer {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  background: linear-gradient(90deg, rgba(245, 166, 35, 0.2), transparent);
+}
+
+/* SPLIT */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2.25rem;
+}
+
+.about-highlights ul {
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+/* PRICING */
+.pricing-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* CONTACT */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #050505;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.8rem;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 1px solid var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+
+.contact-side ul {
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid var(--border);
+  background: #050505;
+  padding: 2.5rem 5vw 1.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* LAYOUT UTILITIES */
+.footer {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none; /* quick simplification; later we can add a mobile menu */
+  }
+}
