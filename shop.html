@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop | Ignition Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Practical AI and automation playbooks for SMB owners. Instant download. No fluff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .shop-hero {
+      padding: 6rem 5vw 3rem;
+      text-align: center;
+    }
+    .shop-hero .eyebrow {
+      color: var(--accent);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .shop-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+    }
+    .shop-hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: rgba(245, 166, 35, 0.12);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Product grid */
+    .products {
+      padding: 2rem 5vw 6rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #0a0a0a;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .product-card:hover {
+      border-color: #444;
+    }
+    .product-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2rem;
+      background: rgba(245, 166, 35, 0.1);
+      color: var(--accent);
+      width: fit-content;
+    }
+    .product-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .product-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .product-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: auto;
+    }
+    .product-price span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 0.25rem;
+    }
+    .btn-disabled {
+      display: inline-block;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #555;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: not-allowed;
+      text-align: center;
+    }
+
+    /* Bundle card */
+    .bundle-card {
+      background: linear-gradient(135deg, #0d0d0d, #111);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .bundle-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem;
+    }
+    .bundle-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .bundle-includes {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .bundle-includes li {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .bundle-includes li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .bundle-right {
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .bundle-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .bundle-was {
+      font-size: 0.85rem;
+      color: #555;
+      text-decoration: line-through;
+      margin-bottom: 0.5rem;
+    }
+    .bundle-save {
+      font-size: 0.75rem;
+      color: #6fcf97;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Notify section */
+    .notify-section {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 4rem 5vw;
+      text-align: center;
+    }
+    .notify-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 0.75rem;
+    }
+    .notify-section p {
+      color: var(--muted);
+      margin: 0 auto 2rem;
+      max-width: 480px;
+    }
+    .notify-form {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .notify-form input {
+      background: #111;
+      border: 1px solid #333;
+      color: var(--text);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      width: 280px;
+      outline: none;
+    }
+    .notify-form input:focus {
+      border-color: var(--accent);
+    }
+    .notify-form input::placeholder {
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .bundle-card {
+        flex-direction: column;
+      }
+      .bundle-right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-left">
+      <a href="index.html" style="text-decoration:none">
+        <span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span>
+      </a>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">What We Do</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="shop.html" style="color: var(--accent)">Shop</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="shop-hero">
+      <div class="eyebrow">Digital Products</div>
+      <span class="coming-soon-badge">🔒 Launching Soon</span>
+      <h1>Playbooks That Actually Work</h1>
+      <p>Practical AI and automation guides built for SMB owners. No theory. No fluff. Just the steps that move the needle.</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+      <div class="products-grid">
+
+        <div class="product-card">
+          <div class="product-icon">🧠</div>
+          <div class="product-tag">Playbook</div>
+          <h3>SMB AI Readiness Playbook</h3>
+          <p>Assess where your business stands with AI, identify your highest-leverage opportunities, and build a 90-day roadmap — without wasting budget.</p>
+          <div class="product-price">$49<span>AUD</span></div>
+          <div class="btn-disabled">Coming Soon</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">📊</div>
+          <div class="product-tag">Playbook</div>
+          <h3>Analytics Setup Guide</h3>
+          <p>Get GA4, Google Ads, Search Console and Merchant Center talking to each other. Stop flying blind and start making decisions from real data.</p>
+          <div class="product-price">$79<span>AUD</span></div>
+          <div class="btn-disabled">Coming Soon</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">⚡</div>
+          <div class="product-tag">Playbook</div>
+          <h3>Automation Starter Kit</h3>
+          <p>The exact workflows, prompts, and tools we use to automate repetitive business tasks. Connect your stack and reclaim 10+ hours a week.</p>
+          <div class="product-price">$49<span>AUD</span></div>
+          <div class="btn-disabled">Coming Soon</div>
+        </div>
+
+      </div>
+
+      <!-- BUNDLE -->
+      <div class="bundle-card">
+        <div>
+          <div class="product-tag">Best Value</div>
+          <h3>The Complete Ignition Bundle</h3>
+          <p>All three playbooks at a discount. Everything you need to assess, measure, and automate your SMB.</p>
+          <ul class="bundle-includes">
+            <li>SMB AI Readiness Playbook ($49)</li>
+            <li>Analytics Setup Guide ($79)</li>
+            <li>Automation Starter Kit ($49)</li>
+          </ul>
+        </div>
+        <div class="bundle-right">
+          <div class="bundle-was">$177 AUD</div>
+          <div class="bundle-price">$129<small style="font-size:1rem;font-weight:400;color:var(--muted)"> AUD</small></div>
+          <div class="bundle-save">Save $48 (27% off)</div>
+          <div class="btn-disabled">Coming Soon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTIFY -->
+    <section class="notify-section">
+      <h2>Get Notified at Launch</h2>
+      <p>Drop your email and we'll let you know the moment the shop goes live — plus an early-bird discount.</p>
+      <form class="notify-form" action="https://formspree.io/f/placeholder" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary">Notify Me</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer style="text-align:center;padding:2rem;color:#444;font-size:0.8rem;border-top:1px solid #111;">
+    © 2026 Ignition Agency · <a href="index.html" style="color:#555;text-decoration:none;">Back to home</a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+      document.getElementById('hamburger').classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>

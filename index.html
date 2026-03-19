@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ignition Agency | AI Automation & Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ignition Agency builds AI-powered automation, analytics, and ecommerce systems so founders can automate operations, see their data clearly, and scale faster." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#hero" onclick="closeMenu()">Home</a>
+      <a href="#services" onclick="closeMenu()">What We Do</a>
+      <a href="#stack" onclick="closeMenu()">Ignition Stack</a>
+      <a href="#case-studies" onclick="closeMenu()">Case Studies</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="shop.html" onclick="closeMenu()" style="color: var(--accent)">Shop</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">AI • AUTOMATION • ANALYTICS</div>
+        <h1>Ignition Agency: Automate. Analyse. Accelerate.</h1>
+        <p class="hero-sub">
+          We design AI-powered systems, analytics, and automations that turn scattered tools into a single, scalable growth engine.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Build My Automated System</a>
+          <a href="#stack" class="btn btn-outline">See Our Dashboards</a>
+        </div>
+        <ul class="hero-bullets">
+          <li>AI and automation strategy for founders and ecommerce brands</li>
+          <li>Unified analytics across GA4, Ads, Search Console, and Merchant Center</li>
+          <li>Shopify and ecommerce systems that are measurable, reliable, and scalable</li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="astro-orbit">
+          <div class="astro-circle"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section id="services" class="section">
+      <h2>AI + Automation + Analytics that Drive Revenue</h2>
+      <p class="section-sub">
+        We connect your data, automate your workflows, and give you dashboards that actually tell you what to do next.
+      </p>
+      <div class="grid-3">
+        <article class="card">
+          <h3>AI Automation Systems</h3>
+          <p>Design and build workflows that reduce manual work: customer onboarding, lead nurturing, reporting, and support.</p>
+          <ul>
+            <li>Workflow automation with n8n, Zapier, Make</li>
+            <li>AI agents and chatbots for support and internal ops</li>
+            <li>Playbooks for monitoring, alerts, and exception handling</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Deep Analytics Dashboards</h3>
+          <p>Consolidated data across your marketing and ecommerce stack, in one clear dashboard.</p>
+          <ul>
+            <li>GA4, Google Ads, Search Console, Merchant Center integration</li>
+            <li>Attribution-focused views for channels and campaigns</li>
+            <li>Executive summaries and automated insight reports</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Ecommerce &amp; Growth Systems</h3>
+          <p>Shopify and ecommerce setups designed for clean tracking, smooth UX, and repeatable growth.</p>
+          <ul>
+            <li>Shopify configuration and theme optimisation</li>
+            <li>Conversion tracking, tagging, and event cleanup</li>
+            <li>Funnel mapping and CRO recommendations</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section section-alt">
+      <h2>The Ignition Stack</h2>
+      <p class="section-sub">A unified data, automation, and AI system that compounds over time.</p>
+      <div class="stack-grid">
+        <div class="stack-layer">
+          <h3>Data &amp; Tracking Layer</h3>
+          <p>Clean, reliable tracking across your entire stack.</p>
+        </div>
+        <div class="stack-layer">
+          <h3>Analytics &amp; Insight Layer</h3>
+          <p>Dashboards and reports that actually answer business questions.</p>
+        </div>
+        <div class="stack-layer">
+          <h3>Automation Layer</h3>
+          <p>Workflows that trigger from real behaviour, not guesses.</p>
+        </div>
+        <div class="stack-layer">
+          <h3>AI Intelligence Layer</h3>
+          <p>AI agents and copilots that analyse, summarise, and recommend next steps.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section">
+      <h2>Case Studies</h2>
+      <p class="section-sub">Real results for real businesses.</p>
+      <div class="grid-3">
+        <article class="card">
+          <div class="case-tag">Ecommerce</div>
+          <h3>GA4 + Shopify Overhaul</h3>
+          <p>Rebuilt tracking foundations for a DTC brand — went from zero reliable data to full attribution across paid and organic channels within 3 weeks.</p>
+          <p class="case-result">Result: 40% reduction in wasted ad spend.</p>
+        </article>
+        <article class="card">
+          <div class="case-tag">Automation</div>
+          <h3>Reporting Automation</h3>
+          <p>Replaced 8 hours of weekly manual reporting with an automated pipeline — data pulled, formatted, and delivered every Monday morning.</p>
+          <p class="case-result">Result: 8 hours saved weekly, zero errors.</p>
+        </article>
+        <article class="card">
+          <div class="case-tag">AI</div>
+          <h3>AI Operations Layer</h3>
+          <p>Built an AI agent stack to handle customer support triage, internal knowledge queries, and weekly performance summaries for a SaaS team.</p>
+          <p class="case-result">Result: 60% reduction in support response time.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <h2>About Ignition Agency</h2>
+      <div class="split">
+        <div>
+          <p>Ignition Agency exists for founders and teams who move fast but want their systems to be smarter, not more chaotic.</p>
+          <p>We bring together enterprise-grade analytics, AI automation, and ecommerce experience into one integrated system. No more guessing which tool is in charge, or which number to trust.</p>
+          <p>Our work focuses on three outcomes: cleaner data, smarter automation, and clearer decisions.</p>
+        </div>
+        <div class="about-highlights">
+          <h3>What this means for you</h3>
+          <ul>
+            <li>Cleaner data and tracking foundations</li>
+            <li>Automations that actually save time</li>
+            <li>Dashboards you can read in under a minute</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <h2>Engagement Options</h2>
+      <p class="section-sub">Start small, or go all-in. Each tier is built around outcomes and systems.</p>
+      <div class="pricing-grid">
+        <div class="card">
+          <h3>Starter</h3>
+          <p class="tagline">Fix the foundations.</p>
+          <ul>
+            <li>Tracking and tagging audit</li>
+            <li>Key GA4 events and conversions configured</li>
+            <li>Core dashboard for revenue and channels</li>
+          </ul>
+        </div>
+        <div class="card card-highlight">
+          <h3>Growth</h3>
+          <p class="tagline">Connect data and automation.</p>
+          <ul>
+            <li>Ignition Stack implementation</li>
+            <li>Automation workflows for key processes</li>
+            <li>Monthly AI-powered insight summaries</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Scale</h3>
+          <p class="tagline">AI-first operating system.</p>
+          <ul>
+            <li>Advanced analytics and modelling</li>
+            <li>AI agents for support, reporting, and analysis</li>
+            <li>Dedicated optimisation roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <h2>Let's Ignite Your Growth</h2>
+      <p class="section-sub">Tell us where you are now and what you want your systems to do for you.</p>
+      <div class="split">
+        <!-- Formspree: replace YOUR_FORM_ID with your Formspree form id at formspree.io -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" />
+          </label>
+          <label>
+            Current tools
+            <textarea name="currentStack" rows="2" placeholder="Shopify, GA4, Google Ads, Klaviyo, etc."></textarea>
+          </label>
+          <label>
+            What do you want to fix or build first?
+            <textarea name="mainGoal" rows="3" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Start My Build</button>
+        </form>
+        <div class="contact-side">
+          <h3>Typical starting points</h3>
+          <ul>
+            <li>GA4 + tagging cleanup and dashboards</li>
+            <li>Shopify and ecommerce tracking fixes</li>
+            <li>Automation of reporting, alerts, and routine workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
+      <p>AI • Automation • Analytics for modern brands.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>AI System Design</li>
+        <li>Analytics &amp; Dashboards</li>
+        <li>Automation Workflows</li>
+        <li>Ecommerce &amp; Shopify Systems</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Ignition Agency. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.getElementById('hamburger');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
