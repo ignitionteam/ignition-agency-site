@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The $500 Decision That Could Save Your Business 10 Hours a Week | Ignition Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="An audit isn't a cost — it's the fastest way to find $10K+ in waste and inefficiency hiding in plain sight inside your business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .post-hero {
+      padding: 5rem 5vw 2.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .post-hero .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-soft);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .post-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      line-height: 1.15;
+      margin: 0 0 1.25rem;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .post-meta .meta-sep {
+      color: var(--border);
+    }
+
+    .post-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 5vw 4rem;
+    }
+
+    .post-body p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .post-body h2 {
+      font-size: 1.35rem;
+      color: var(--text);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    .post-body strong {
+      color: var(--text);
+    }
+
+    .post-body ul {
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .post-body ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-callout {
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: rgba(245, 166, 35, 0.06);
+      border-radius: 0 0.5rem 0.5rem 0;
+      color: var(--text) !important;
+      font-weight: 600;
+      font-size: 1.05rem !important;
+    }
+
+    .math-box {
+      border-radius: 0.75rem;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      padding: 1.75rem;
+      background: rgba(245, 166, 35, 0.04);
+      margin: 2rem 0;
+    }
+
+    .math-box h3 {
+      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .math-box .math-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .math-box .math-row:last-child {
+      border-bottom: none;
+      color: var(--text);
+      font-weight: 700;
+      margin-top: 0.25rem;
+      padding-top: 0.75rem;
+    }
+
+    .math-box .math-row span:last-child {
+      color: var(--accent-soft);
+    }
+
+    .math-box .math-row:last-child span:last-child {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--accent-soft);
+    }
+
+    .post-cta {
+      margin: 3rem 0 0;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      background: rgba(245, 166, 35, 0.06);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      text-align: center;
+    }
+
+    .post-cta h3 {
+      font-size: 1.35rem;
+      margin: 0 0 0.75rem;
+    }
+
+    .post-cta p {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .post-hero {
+        padding: 3.5rem 5vw 1.5rem;
+      }
+      .post-body {
+        padding: 0 5vw 3rem;
+      }
+      .math-box .math-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a href="index.html" style="text-decoration:none"><span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span></a>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#hero" onclick="closeMenu()">Home</a>
+      <a href="index.html#services" onclick="closeMenu()">What We Do</a>
+      <a href="index.html#stack" onclick="closeMenu()">Ignition Stack</a>
+      <a href="index.html#case-studies" onclick="closeMenu()">Case Studies</a>
+      <a href="index.html#about" onclick="closeMenu()">About</a>
+      <a href="index.html#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+      <a href="blog.html" onclick="closeMenu()" style="color: var(--accent-soft)">Blog</a>
+      <a href="shop.html" onclick="closeMenu()" style="color: var(--accent)">Shop</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <div class="post-hero">
+      <a href="blog.html" class="back-link">← Back to Insights</a>
+      <span class="eyebrow">Automation &amp; ROI</span>
+      <h1>The $500 Decision That Could Save Your Business 10 Hours a Week</h1>
+      <div class="post-meta">
+        <span>March 10, 2026</span>
+        <span class="meta-sep">|</span>
+        <span>Ignition Agency</span>
+        <span class="meta-sep">|</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>Let me tell you about a business owner I spoke to recently. Runs a professional services firm, 15 people. Smart, capable, building something real. And every Monday morning, without fail, she spends two hours pulling reports from three different platforms, copying numbers into a spreadsheet, and building a summary for her team meeting.</p>
+
+      <p>She's been doing it for three years. She's thought about fixing it multiple times. But there's always something more urgent.</p>
+
+      <p>That two hours, multiplied by 52 weeks, is 104 hours a year. At her billable rate, that's over $20,000 of her time spent doing something a computer could do in four minutes.</p>
+
+      <h2>What SMB Owners Are Actually Wasting Time On</h2>
+
+      <p>This is not a unique story. Talk to almost any business owner running a 10-50 person operation and you'll find the same patterns:</p>
+
+      <ul>
+        <li>Manual reporting — pulling data from multiple platforms and assembling it by hand, every week or every month</li>
+        <li>Chasing information — asking team members for status updates that should be visible in a system</li>
+        <li>Reconciling spreadsheets — because the spreadsheet is the "source of truth" but nobody trusts it</li>
+        <li>Re-entering data — because two systems that should talk to each other don't</li>
+        <li>Ad hoc analysis — spending hours answering questions that should have a dashboard</li>
+      </ul>
+
+      <p>These tasks feel like part of running a business. They're not. They're symptoms of operational debt — the accumulated cost of systems and processes that were never properly connected.</p>
+
+      <p class="stat-callout">The average SMB owner loses 15-20% of their productive week to manual data work that could be automated.</p>
+
+      <p>That's not a productivity problem. That's a systems problem. And systems problems have systems solutions.</p>
+
+      <h2>How an Audit Surfaces the Highest-Value Opportunities</h2>
+
+      <p>Most business owners don't know exactly where the time is going. They have a vague sense that "reporting takes too long" or "the data is always messy" — but they haven't quantified it, and they haven't mapped which fix would deliver the most value.</p>
+
+      <p>That's what a proper operations audit does. It's not a general technology review. It's a structured process for identifying the specific workflows where automation would deliver the highest return for the lowest implementation effort.</p>
+
+      <p>A good audit typically takes two to three hours of your time across a structured interview and system walkthrough. In exchange, you get a prioritised map of your highest-value automation opportunities — ranked by time saved, risk reduced, and implementation complexity.</p>
+
+      <p>The output is a clear answer to the question: <strong>if I had $5K to spend on automation, where exactly should it go?</strong></p>
+
+      <p>Most businesses leave an audit with three to five specific opportunities identified. Typically one is a quick win — implementable in days, delivering immediate time savings. The others are medium-term projects that compound over time.</p>
+
+      <h2>The ROI in Real Numbers</h2>
+
+      <p>Let's make this concrete. Here's what a typical audit finding looks like for a 15-20 person services business:</p>
+
+      <div class="math-box">
+        <h3>Example: Weekly Reporting Automation</h3>
+        <div class="math-row">
+          <span>Time currently spent on weekly reports</span>
+          <span>3 hrs/week</span>
+        </div>
+        <div class="math-row">
+          <span>Owner/manager hourly cost (fully loaded)</span>
+          <span>$150/hr</span>
+        </div>
+        <div class="math-row">
+          <span>Annual cost of current process</span>
+          <span>$23,400</span>
+        </div>
+        <div class="math-row">
+          <span>Automation build cost (one-off)</span>
+          <span>$2,500–$4,000</span>
+        </div>
+        <div class="math-row">
+          <span>Ongoing maintenance ($700/month MRR)</span>
+          <span>$8,400/yr</span>
+        </div>
+        <div class="math-row">
+          <span>Net annual saving (Year 1)</span>
+          <span>$11,000–$13,000</span>
+        </div>
+      </div>
+
+      <p>That's a single automation, on a single process. Most businesses have three to five of these hiding in plain sight.</p>
+
+      <p>This is the model that automation specialists like Mark Savant have built businesses around: productised automation delivered at a $700 MRR retainer. The math works because the savings are real, recurring, and measurable. It's not a hard sell when you can show the numbers.</p>
+
+      <h2>Why Most Business Owners Put It Off</h2>
+
+      <p>The most common thing I hear is some version of: "I know we need to fix this, but I don't have time to deal with it right now."</p>
+
+      <p>That's the trap. The reason you don't have time is because you're spending it on the inefficiency you're too busy to fix.</p>
+
+      <p>The other common objection is that it feels like a big commitment — a lengthy project, a complicated implementation, a lot of change management. And it can be, if you try to boil the ocean. But that's not how good operators approach it.</p>
+
+      <p>The right approach is:</p>
+
+      <ul>
+        <li>Audit first — understand exactly what's worth fixing</li>
+        <li>Start with one quick win — prove the model works in your business</li>
+        <li>Build from there — add automations as the previous ones bed in</li>
+      </ul>
+
+      <p>The $500 audit isn't a cost. It's the thing that tells you where to spend the next $5,000 so it actually works.</p>
+
+      <h2>What It Costs You to Wait</h2>
+
+      <p>Back to the business owner pulling her Monday morning reports. If she'd done an audit 12 months ago and implemented the fix, she'd have gotten 104 hours back by now. That's roughly $15,000 in recovered time — from one process, over one year.</p>
+
+      <p>Instead, she's still doing it manually. And she'll probably still be doing it manually in another 12 months, because the moment never feels quite right.</p>
+
+      <p>The moment is now. Your operational debt is compounding. Every week you delay is another week of manual work, another week of errors, another week of decisions made on incomplete information.</p>
+
+      <p>The businesses that win over the next three years aren't going to be the ones with the most sophisticated AI. They're going to be the ones that did the unsexy work of automating the fundamentals first — and freed up the capacity to actually grow.</p>
+
+      <div class="post-cta">
+        <h3>Book the $500 Audit</h3>
+        <p>Two to three hours of structured conversation and system review. A clear map of your highest-value automation opportunities. Real numbers, real priorities, real next steps.</p>
+        <a href="index.html#contact" class="btn btn-primary">Book a free 20-minute discovery call</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
+      <p>AI • Automation • Analytics for modern brands.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>AI System Design</li>
+        <li>Analytics &amp; Dashboards</li>
+        <li>Automation Workflows</li>
+        <li>Ecommerce &amp; Shopify Systems</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Ignition Agency. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.getElementById('hamburger');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

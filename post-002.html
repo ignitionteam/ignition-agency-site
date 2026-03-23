@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Why Your Business Isn't Ready for AI (And It's Not What You Think) | Ignition Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Everyone's trying AI tools. Most are disappointed. The reason isn't the AI — it's the data underneath it. A framework for Australian SMBs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .post-hero {
+      padding: 5rem 5vw 2.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .post-hero .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-soft);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .post-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      line-height: 1.15;
+      margin: 0 0 1.25rem;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .post-meta .meta-sep {
+      color: var(--border);
+    }
+
+    .post-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 5vw 4rem;
+    }
+
+    .post-body p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .post-body h2 {
+      font-size: 1.35rem;
+      color: var(--text);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    .post-body strong {
+      color: var(--text);
+    }
+
+    .post-body ul {
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .post-body ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-callout {
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: rgba(245, 166, 35, 0.06);
+      border-radius: 0 0.5rem 0.5rem 0;
+      color: var(--text) !important;
+      font-weight: 600;
+      font-size: 1.05rem !important;
+    }
+
+    .framework-box {
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      background: linear-gradient(90deg, rgba(245, 166, 35, 0.06), transparent);
+      margin: 2rem 0;
+    }
+
+    .framework-box h3 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      color: var(--accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+    }
+
+    .framework-box ul {
+      margin: 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--accent-soft);
+    }
+
+    .post-cta {
+      margin: 3rem 0 0;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      background: rgba(245, 166, 35, 0.06);
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      text-align: center;
+    }
+
+    .post-cta h3 {
+      font-size: 1.35rem;
+      margin: 0 0 0.75rem;
+    }
+
+    .post-cta p {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .post-hero {
+        padding: 3.5rem 5vw 1.5rem;
+      }
+      .post-body {
+        padding: 0 5vw 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a href="index.html" style="text-decoration:none"><span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span></a>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html#hero" onclick="closeMenu()">Home</a>
+      <a href="index.html#services" onclick="closeMenu()">What We Do</a>
+      <a href="index.html#stack" onclick="closeMenu()">Ignition Stack</a>
+      <a href="index.html#case-studies" onclick="closeMenu()">Case Studies</a>
+      <a href="index.html#about" onclick="closeMenu()">About</a>
+      <a href="index.html#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+      <a href="blog.html" onclick="closeMenu()" style="color: var(--accent-soft)">Blog</a>
+      <a href="shop.html" onclick="closeMenu()" style="color: var(--accent)">Shop</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <div class="post-hero">
+      <a href="blog.html" class="back-link">← Back to Insights</a>
+      <span class="eyebrow">AI &amp; Data Strategy</span>
+      <h1>Why Your Business Isn't Ready for AI (And It's Not What You Think)</h1>
+      <div class="post-meta">
+        <span>March 17, 2026</span>
+        <span class="meta-sep">|</span>
+        <span>Ignition Agency</span>
+        <span class="meta-sep">|</span>
+        <span>7 min read</span>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      <p>You've tried the AI tools. Maybe you're using ChatGPT for emails. Someone on your team is using Copilot for spreadsheets. You signed up for one of the AI platforms everyone was talking about six months ago. And so far? Mildly useful, occasionally impressive, mostly underwhelming.</p>
+
+      <p>You're not alone. And you're not doing it wrong. The AI tools themselves are genuinely capable. The problem is underneath them.</p>
+
+      <h2>The Real Blocker Isn't the AI</h2>
+
+      <p>When AI deployments fail in SMBs — and they fail often — the autopsy almost always comes back to the same cause: the data wasn't ready.</p>
+
+      <p>Not "not enough data." The wrong kind of data. Disconnected data. Data living in seven different places that nobody has ever pulled together. Data that exists as institutional knowledge in one person's head and dies when they leave.</p>
+
+      <p>Think about what a typical 20-person business actually runs on:</p>
+
+      <ul>
+        <li>A CRM that's 60% accurate because people stopped updating it in 2023</li>
+        <li>Invoicing and billing in one platform, actual client data in another</li>
+        <li>Project tracking in a spreadsheet that "works fine" but only two people understand</li>
+        <li>Financial reporting that requires someone to manually pull exports from three systems and paste them together every month</li>
+        <li>Customer communication history split across email, SMS, and whatever the sales team uses</li>
+      </ul>
+
+      <p>AI doesn't fix that. AI amplifies it. Feed a language model fragmented, inconsistent data and you get fast, confident, wrong answers.</p>
+
+      <h2>Why AI Tools Fail Without Data Foundations</h2>
+
+      <p>Here's the thing that the AI vendors don't lead with: every AI tool is a layer on top of something. The quality of the output is determined by the quality of what's underneath it.</p>
+
+      <p class="stat-callout">Garbage in, garbage out — but now at the speed of AI.</p>
+
+      <p>Surface-level AI use — using ChatGPT to write a proposal, having Copilot summarise a meeting — works reasonably well because it's drawing on general knowledge and your specific input in that moment. There's no deep data dependency. You can get value from it immediately.</p>
+
+      <p>Operational AI is different. Operational AI means the system is doing something for you automatically — routing leads, flagging anomalies, generating reports, summarising customer history, identifying at-risk accounts. For any of that to work reliably, it needs a clean, connected data foundation underneath it.</p>
+
+      <p>Without it, you get AI that hallucinates customer history. AI that generates reports with subtly wrong numbers. AI that gives you confident recommendations based on three months of incomplete data. That's worse than no AI at all — because at least with no AI, you know what you don't know.</p>
+
+      <h2>What "Data Ready" Actually Means for a 10-50 Person Business</h2>
+
+      <p>You don't need a data warehouse. You don't need a team of data engineers. "Data ready" for a business your size means something much more practical.</p>
+
+      <div class="framework-box">
+        <h3>The Data Readiness Framework</h3>
+        <ul>
+          <li><strong>Single source of truth for customers</strong> — one place where a complete customer record lives, not fragments across five tools</li>
+          <li><strong>Connected systems</strong> — your key platforms talk to each other via integrations, not manual exports</li>
+          <li><strong>Consistent definitions</strong> — everyone agrees on what "active customer," "qualified lead," and "churned" actually mean</li>
+          <li><strong>Documented processes</strong> — the things that live in people's heads are written down and structured</li>
+          <li><strong>Historical integrity</strong> — you have at least 12 months of clean, complete data in your core systems</li>
+        </ul>
+      </div>
+
+      <p>That's it. That's the foundation. Once you have that, AI tools stop being toys and start being leverage.</p>
+
+      <h2>Surface-Level AI vs Operational AI</h2>
+
+      <p>Most businesses are stuck in surface-level AI. That means using AI to speed up tasks that humans are still fundamentally driving. Writing assistance, meeting summaries, image generation, faster Google searches. Useful. Not transformative.</p>
+
+      <p>Operational AI is when the system is running a process, not just assisting a human with one. It means your CRM automatically scores and routes leads. It means your reporting runs every Monday morning without anyone touching it. It means exceptions get flagged before they become problems.</p>
+
+      <p>The businesses that are already getting real ROI from AI aren't the ones that subscribed to the most tools. They're the ones that did the unglamorous work of cleaning up their data foundations first — and then built AI on top of that.</p>
+
+      <h2>The Uncomfortable Truth</h2>
+
+      <p>Most business owners want to skip the data foundations step because it's not exciting. There's no demo to show. No before-and-after screenshot. It just looks like a spreadsheet audit and some system consolidation work.</p>
+
+      <p>But it's the only thing that makes the rest of it work.</p>
+
+      <p>The businesses that invest 4-6 weeks in getting their data foundations right will spend the next 2-3 years compounding those benefits through AI and automation. The ones that skip it will keep cycling through the same experience: new tool, initial excitement, disappointment, next tool.</p>
+
+      <p>Stop buying AI tools. Start building the foundation that makes AI tools actually work.</p>
+
+      <div class="post-cta">
+        <h3>Take the AI Readiness Audit</h3>
+        <p>Find out exactly where your data foundations are strong and where the gaps are — before you spend another dollar on AI tooling.</p>
+        <a href="index.html#contact" class="btn btn-primary">Book a free 20-minute discovery call</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
+      <p>AI • Automation • Analytics for modern brands.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li>AI System Design</li>
+        <li>Analytics &amp; Dashboards</li>
+        <li>Automation Workflows</li>
+        <li>Ecommerce &amp; Shopify Systems</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Ignition Agency. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      const btn = document.getElementById('hamburger');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
