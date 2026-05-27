@@ -1,0 +1,9 @@
+.git/
+.wrangler/
+.claude/
+.DS_Store
+node_modules/
+*.log
+README.md
+wrangler.jsonc
+status.html
