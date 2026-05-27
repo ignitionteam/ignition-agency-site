@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ignitionagencysite",
   "assets": {
-    "directory": "public"
+    "directory": "."
   },
   "compatibility_date": "2025-09-27",
   "observability": {
