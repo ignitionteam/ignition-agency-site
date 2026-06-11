@@ -50,7 +50,8 @@
       <a href="#how" onclick="closeMenu()">How It Works</a>
       <a href="#about" onclick="closeMenu()">About</a>
       <a href="#pricing" onclick="closeMenu()">Pricing</a>
-      <a href="shop.html" onclick="closeMenu()" style="color: var(--accent-soft)">Shop</a>
+      <a href="audit.html" onclick="closeMenu()" style="color: var(--accent-soft)">Payday Super Audit</a>
+      <a href="shop.html" onclick="closeMenu()">Shop</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
       <a href="blog.html" onclick="closeMenu()">Blog</a>
     </nav>
@@ -238,7 +239,7 @@
       <h2>Book a Free Discovery Call</h2>
       <p class="section-sub">30 minutes. No pitch, no pressure. Just an honest conversation about where your business is and whether we can help.</p>
       <div class="split">
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="contact-form" id="contact-form">
           <label>
             Name
             <input type="text" name="name" required />
@@ -317,6 +318,20 @@
       document.getElementById('nav-links').classList.remove('open');
       document.getElementById('hamburger').classList.remove('active');
     }
+  </script>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = new FormData(this);
+      const body = encodeURIComponent(
+        'Name: ' + (f.get('name')||'') + '\n' +
+        'Email: ' + (f.get('email')||'') + '\n' +
+        'Business: ' + (f.get('company')||'') + '\n' +
+        'Staff: ' + (f.get('staff')||'') + '\n' +
+        'Biggest bottleneck: ' + (f.get('mainGoal')||''));
+      window.location.href = 'mailto:hello@ignitionagency.au?subject=' + encodeURIComponent('Discovery Call Request') + '&body=' + body;
+    });
   </script>
 </body>
 </html>
