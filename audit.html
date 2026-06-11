@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payday Super Data Readiness Audit | Ignition Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Is your payroll data ready for Payday Super? The ATO will see discrepancies within days from July 1, 2026. Get a $300 Data Readiness Audit before the deadline." />
+  <meta name="keywords" content="payday super, data readiness audit, payroll audit, STP, SBSCH, ATO compliance, July 2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .landing-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .landing-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .urgency-tag {
+      display: inline-block;
+      background: #ef4444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    .landing-hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .landing-hero .hero-sub {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .countdown-item {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f97316;
+    }
+    .countdown-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+    .price-highlight {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .price-highlight .price {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .price-highlight .price-note {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    .problem-section {
+      padding: 4rem 2rem;
+      background: #0f172a;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .problem-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .problem-card h3 {
+      color: #f97316;
+      margin-bottom: 1rem;
+    }
+    .problem-card p {
+      color: #94a3b8;
+    }
+    .checklist-section {
+      padding: 4rem 2rem;
+      background: #1e293b;
+    }
+    .checklist {
+      max-width: 700px;
+      margin: 2rem auto;
+      text-align: left;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .checklist-icon {
+      color: #22c55e;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .checklist-text h4 {
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .checklist-text p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    .cta-section {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .cta-form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+    .cta-form input, .cta-form select, .cta-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      margin-top: 0.25rem;
+      font-size: 1rem;
+    }
+    .cta-form button {
+      width: 100%;
+      padding: 1rem;
+      background: #1e293b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .cta-form button:hover {
+      background: #0f172a;
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding: 2rem;
+    }
+    .trust-badge {
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+    .source-note {
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid #f97316;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    .source-note cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 600;
+      color: #f97316;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a href="/" style="text-decoration:none;">
+        <span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="#problem">The Problem</a>
+      <a href="#audit">What's Included</a>
+      <a href="#book">Book Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="landing-hero">
+      <div class="landing-hero-content">
+        <div class="urgency-tag">⚠️ SBSCH closes June 30 — Payday Super starts July 1</div>
+        <h1>Is Your Payroll Data Ready for Real-Time ATO Monitoring?</h1>
+        <p class="hero-sub">
+          From July 1, 2026, super must be paid every pay cycle. The ATO will see discrepancies within <strong>days</strong>, not months. Most employers aren't ready.
+        </p>
+        
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <div class="countdown-number" id="days">--</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="hours">--</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-number" id="minutes">--</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+        </div>
+
+        <div class="price-highlight">
+          <div class="price">$300</div>
+          <div class="price-note">Payday Super Data Readiness Audit — Fixed fee, no surprises</div>
+        </div>
+
+        <a href="#book" class="btn btn-primary" style="font-size:1.1rem; padding: 1rem 2rem;">Book Your Audit Now →</a>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem" class="problem-section">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="color: #fff; margin-bottom: 1rem;">Two Deadlines. One Data Problem.</h2>
+        <p style="color: #94a3b8; margin-bottom: 3rem;">
+          The government is closing your free super tool AND turning on real-time ATO payroll monitoring on the exact same day.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>🚫 SBSCH Closing</h3>
+          <p>The Small Business Superannuation Clearing House — used by 170,000+ employers — shuts down June 30, 2026. All your payment history will be gone.</p>
+          <div class="source-note">
+            "Make March the last time you use the SBSCH."
+            <cite>— ATO Official Guidance, April 2026</cite>
+          </div>
+        </div>
+        <div class="problem-card">
+          <h3>⚡ Payday Super Starts</h3>
+          <p>From July 1, super must be paid on the same cycle as wages — not quarterly. Real-time STP reporting means the ATO sees everything, immediately.</p>
+          <div class="source-note">
+            "Payroll errors that may previously have gone unnoticed for months will become easier to identify."
+            <cite>— Breathe Accounting, April 2026</cite>
+          </div>
+        </div>
+        <div class="problem-card">
+          <h3>📊 Your Data is the Risk</h3>
+          <p>Wrong TFNs. Outdated super fund USIs. Mismatched employment status. Miscategorised pay items. The ATO's STP/super mismatch detection is their primary enforcement method.</p>
+          <div class="source-note">
+            "Manually check every pay item before July 1."
+            <cite>— MYOB Partner Network Advisory</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section id="audit" class="checklist-section">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <h2 style="color: #fff; margin-bottom: 1rem;">What's in the $300 Audit</h2>
+        <p style="color: #94a3b8;">A complete review of your payroll data readiness — delivered in 48 hours.</p>
+      </div>
+
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checklist-icon">✓</div>
+          <div class="checklist-text">
+            <h4>Employee Data Validation</h4>
+            <p>TFN verification, super fund USI checks, employment status alignment</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-icon">✓</div>
+          <div class="checklist-text">
+            <h4>Pay Item Review</h4>
+            <p>Check all pay items are flagged for Qualifying Earnings + SG correctly (the ATO's primary detection method)</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-icon">✓</div>
+          <div class="checklist-text">
+            <h4>STP Alignment Check</h4>
+            <p>Verify your STP reporting matches your payroll configuration</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-icon">✓</div>
+          <div class="checklist-text">
+            <h4>SBSCH Transition Plan</h4>
+            <p>Archive recommendations + clearing house migration checklist</p>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checklist-icon">✓</div>
+          <div class="checklist-text">
+            <h4>Risk Report + Action Plan</h4>
+            <p>Plain-English summary of what's wrong and exactly how to fix it before July 1</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="color: #94a3b8; font-size: 0.9rem;">
+          Average audit time: 2-3 hours. Delivered via video walkthrough + written report.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA / BOOKING -->
+    <section id="book" class="cta-section">
+      <h2>Book Your Payday Super Audit</h2>
+      <p>
+        Bookkeepers are booked out and charging emergency rates. 
+        Get your data checked now — $300 flat fee, 48-hour turnaround.
+      </p>
+
+      <div class="cta-form">
+        <form id="audit-form">
+          <input type="hidden" name="_subject" value="Payday Super Audit Request" />
+          
+          <label>
+            Your Name *
+            <input type="text" name="name" required />
+          </label>
+          
+          <label>
+            Email *
+            <input type="email" name="email" required />
+          </label>
+          
+          <label>
+            Business Name
+            <input type="text" name="business" />
+          </label>
+          
+          <label>
+            Number of Employees
+            <select name="employees">
+              <option value="1-5">1-5</option>
+              <option value="6-20">6-20</option>
+              <option value="21-50">21-50</option>
+              <option value="50+">50+</option>
+            </select>
+          </label>
+          
+          <label>
+            Current Payroll Software
+            <input type="text" name="payroll" placeholder="MYOB, Xero, QuickBooks, etc." />
+          </label>
+          
+          <label>
+            Anything else we should know?
+            <textarea name="notes" rows="2"></textarea>
+          </label>
+          
+          <button type="submit">Book My $300 Audit →</button>
+        </form>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-badge">✓ Fixed fee — no hourly surprises</div>
+        <div class="trust-badge">✓ 48-hour turnaround</div>
+        <div class="trust-badge">✓ Plain-English report</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
+      <p>Data & AI Readiness for Australian SMBs</p>
+    </div>
+    <div class="footer-col">
+      <h4>Other Services</h4>
+      <ul>
+        <li><a href="/">AI Automation</a></li>
+        <li><a href="/">Analytics Dashboards</a></li>
+        <li><a href="/">Data Infrastructure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Ignition Agency, operated by Ignition Consulting Pty Ltd · ABN 38 617 040 052. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Countdown to July 1, 2026
+    function updateCountdown() {
+      const target = new Date('2026-07-01T00:00:00+10:00');
+      const now = new Date();
+      const diff = target - now;
+      
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+      }
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+
+  <script>
+    document.getElementById('audit-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = new FormData(this);
+      const body = encodeURIComponent(
+        'Name: ' + (f.get('name')||'') + '\n' +
+        'Email: ' + (f.get('email')||'') + '\n' +
+        'Business: ' + (f.get('business')||'') + '\n' +
+        'Employees: ' + (f.get('employees')||'') + '\n' +
+        'Payroll software: ' + (f.get('payroll')||'') + '\n' +
+        'Notes: ' + (f.get('notes')||''));
+      window.location.href = 'mailto:hello@ignitionagency.au?subject=' + encodeURIComponent('Payday Super Audit Request') + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
