@@ -7,16 +7,7 @@
   <meta name="description" content="Ignition Agency helps Australian SMEs cut through the AI noise and implement automation that actually works. Practical assessments, clear roadmaps, real results." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ9K6GL853"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KQ9K6GL853');
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://ignitionagency.au/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ignitionagency.au/" />
@@ -27,95 +18,920 @@
   <meta name="twitter:title" content="Ignition Agency | SME AI Assessment & Automation" />
   <meta name="twitter:description" content="Ignition Agency builds AI-powered automation, analytics, and ecommerce systems so founders can automate operations, see their data clearly, and scale faster." />
   <meta name="twitter:image" content="https://ignitionagency.au/assets/og-image.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ignition Agency",
-    "url": "https://ignitionagency.au",
-    "description": "AI-powered automation, analytics, and ecommerce systems for founders and SMBs in Australia.",
-    "areaServed": "AU",
-    "serviceType": ["AI Automation", "Analytics", "Ecommerce Systems"]
-  }
-  </script>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ9K6GL853"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KQ9K6GL853');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Ignition Agency","url":"https://ignitionagency.au","description":"AI-powered automation, analytics, and ecommerce systems for founders and SMBs in Australia.","areaServed":"AU","serviceType":["AI Automation","Analytics","Ecommerce Systems"]}</script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #03040a;
+      --surface: #080b18;
+      --surface2: #0d1128;
+      --border: rgba(100,140,255,0.12);
+      --accent: #4f7cff;
+      --accent2: #ff6b35;
+      --accent3: #00d4ff;
+      --glow: rgba(79,124,255,0.4);
+      --text: #e8eaf6;
+      --muted: #7b82a8;
+      --font: 'Space Grotesk', sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom cursor */
+    .cursor {
+      position: fixed;
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+      mix-blend-mode: screen;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(79,124,255,0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%,-50%);
+      transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    }
+    .cursor.expand { width: 20px; height: 20px; background: var(--accent2); }
+    .cursor-ring.expand { width: 60px; height: 60px; border-color: var(--accent2); }
+
+    /* Canvas */
+    #space-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s;
+    }
+    .nav.scrolled {
+      background: rgba(3,4,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom-color: var(--border);
+    }
+    .logo-text {
+      font-family: var(--mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #fff;
+    }
+    .logo-dot {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.cta-link {
+      color: var(--accent);
+      border: 1px solid rgba(79,124,255,0.4);
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+    }
+    .nav-links a.cta-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text);
+      transition: all 0.3s;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+    }
+    .hero h1 .line { display: block; overflow: hidden; }
+    .hero h1 .word { display: inline-block; }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      max-width: 600px;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+    .btn:hover::before { transform: translateX(100%); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 30px rgba(79,124,255,0.4);
+    }
+    .btn-primary:hover {
+      background: #6b93ff;
+      box-shadow: 0 0 50px rgba(79,124,255,0.6);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+    }
+    .scroll-indicator span {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.5); opacity: 0.5; }
+    }
+
+    /* Rocket SVG */
+    .rocket-container {
+      position: absolute;
+      right: 5%;
+      bottom: 15%;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(8,11,24,0.6);
+      backdrop-filter: blur(10px);
+    }
+    .stat-item {
+      flex: 1;
+      max-width: 300px;
+      padding: 2rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.3rem;
+    }
+
+    /* Section base */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-full {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 3rem;
+    }
+    .section-full > .inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-alt {
+      background: linear-gradient(180deg, transparent, rgba(8,11,24,0.8) 20%, rgba(8,11,24,0.8) 80%, transparent);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    h2 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 4rem;
+    }
+
+    /* Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .card {
+      background: var(--surface);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s, background 0.4s;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .card:hover { background: var(--surface2); transform: translateY(-4px); }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .card ul li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Process steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      position: relative;
+      gap: 0;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 3.5rem;
+      left: 16.6%;
+      right: 16.6%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3), var(--accent));
+      opacity: 0.3;
+    }
+    .step {
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+    .step-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(79,124,255,0.2);
+    }
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* About split */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .split p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: relative;
+    }
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--accent), var(--accent3));
+    }
+    .highlight-box h3 {
+      font-size: 0.8rem;
+      font-family: var(--mono);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .highlight-box ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .highlight-box ul li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .highlight-box ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      font-size: 0.5rem;
+      color: var(--accent);
+      top: 0.35rem;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .pricing-card {
+      background: var(--surface);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .pricing-card:hover { background: var(--surface2); }
+    .pricing-card.featured {
+      background: linear-gradient(160deg, rgba(79,124,255,0.1), rgba(0,212,255,0.05));
+    }
+    .pricing-card.featured::after {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 1.5rem; right: -2.5rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.3rem 3rem;
+      transform: rotate(45deg);
+    }
+    .pricing-card h3 {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    .price span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 1.25rem 0;
+    }
+    .pricing-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .pricing-card ul li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .pricing-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    input, textarea, select {
+      font-family: var(--font);
+      font-size: 0.95rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      color: var(--text);
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      width: 100%;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(79,124,255,0.1);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .contact-info h3 {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .contact-info ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-info ul li {
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .contact-info ul li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 5rem 3rem 3rem;
+      background: rgba(3,4,10,0.9);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+    .footer-col h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-col ul li { font-size: 0.9rem; color: var(--muted); }
+    .footer-col ul li a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--text); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Reveal — visible by default, JS enhances */
+    .reveal { transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-loaded .reveal { opacity: 0; transform: translateY(40px); }
+    .js-loaded .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Noise overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 9997;
+    }
+
+    /* Horizontal rule */
+    .h-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* Marquee */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      background: rgba(8,11,24,0.5);
+      position: relative;
+      z-index: 1;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+    .marquee-item {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 3rem;
+      white-space: nowrap;
+    }
+    .marquee-item span { color: var(--accent); margin: 0 1rem; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    a { color: var(--accent); }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(3,4,10,0.97); border-bottom: 1px solid var(--border); flex-direction: column; gap: 0; padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.9rem 2rem; border-radius: 0; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 5rem); }
+      .grid-3, .process-steps, .pricing-grid { grid-template-columns: 1fr; }
+      .split, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .section, .section-full { padding: 5rem 1.5rem; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); flex: 1 1 150px; }
+      .process-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-left">
-      <span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span>
-    </div>
-    <nav class="nav-links" id="nav-links">
-      <a href="#hero" onclick="closeMenu()">Home</a>
-      <a href="#services" onclick="closeMenu()">What We Do</a>
-      <a href="#how" onclick="closeMenu()">How It Works</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#pricing" onclick="closeMenu()">Pricing</a>
-      <a href="audit.html" onclick="closeMenu()" style="color: var(--accent-soft)">Payday Super Audit</a>
-      <a href="shop.html" onclick="closeMenu()">Shop</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-      <a href="blog.html" onclick="closeMenu()">Blog</a>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Three.js canvas -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="logo-text">IGN<span class="logo-dot">·</span>ITION</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="#how" onclick="closeMenu()">How it works</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#pricing" onclick="closeMenu()">Pricing</a></li>
+        <li><a href="audit.html" onclick="closeMenu()">Payday Super Audit</a></li>
+        <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
+        <li><a href="#contact" class="cta-link" onclick="closeMenu()">Book a call →</a></li>
+      </ul>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">AI ASSESSMENT • AUTOMATION • IMPLEMENTATION</div>
-        <h1>Stop guessing. Start automating.</h1>
-        <p class="hero-sub">
-          Most SMEs waste months trying random AI tools that go nowhere. Ignition gives you a clear picture of where your business stands, what's worth automating, and exactly how to do it.
-        </p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Book a Free Discovery Call</a>
-          <a href="#how" class="btn btn-outline">See How It Works</a>
-        </div>
-        <ul class="hero-bullets">
-          <li>Built by someone doing digital transformation inside corporate Australia every day</li>
-          <li>Practical AI implementation — no hype, no jargon, no tools you won't actually use</li>
-          <li>Designed for SMEs with 5–50 staff who are serious about getting this right</li>
-        </ul>
-      </div>
-      <div class="hero-visual">
-        <div class="astro-orbit">
-          <div class="astro-circle"></div>
-        </div>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-label" id="hero-label">AI Assessment · Automation · Implementation</div>
+    <h1 id="hero-h1">
+      <span class="line"><span class="word">Stop</span> <span class="word">guessing.</span></span>
+      <span class="line"><em><span class="word">Start</span> <span class="word">igniting.</span></em></span>
+    </h1>
+    <p class="hero-sub" id="hero-sub">
+      Most SMEs waste months on random AI tools that go nowhere. Ignition gives you a clear picture of where your business stands, what's worth automating, and exactly how to launch it.
+    </p>
+    <div class="hero-cta" id="hero-cta">
+      <a href="#contact" class="btn btn-primary">Book a Free Discovery Call</a>
+      <a href="#how" class="btn btn-outline">See How It Works</a>
+    </div>
+    <div class="scroll-indicator" id="scroll-ind">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- PAIN POINTS -->
-    <section id="problems" class="section">
-      <h2>Sound familiar?</h2>
-      <p class="section-sub">These are the most common things we hear from SME owners before they work with us.</p>
-      <div class="grid-3">
-        <article class="card">
-          <h3>"I know I need AI but I don't know where to start."</h3>
-          <p>You've read the articles, watched the demos, maybe signed up for a tool or two. But nothing has actually changed how your business runs.</p>
-        </article>
-        <article class="card">
-          <h3>"We tried a few tools and it was a waste of time."</h3>
-          <p>Tools don't fail because AI doesn't work. They fail because nobody assessed whether your business was ready for them first.</p>
-        </article>
-        <article class="card">
-          <h3>"I don't have an IT team to figure this out."</h3>
-          <p>Enterprise companies have whole departments for this. You have yourself, and a to-do list that's already too long. That's exactly the gap Ignition fills.</p>
-        </article>
-      </div>
-    </section>
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">AI Readiness Assessment <span>◆</span></div>
+      <div class="marquee-item">Workflow Automation <span>◆</span></div>
+      <div class="marquee-item">90-Day Roadmap <span>◆</span></div>
+      <div class="marquee-item">Australian SMEs <span>◆</span></div>
+      <div class="marquee-item">No Hype. Real Results. <span>◆</span></div>
+      <div class="marquee-item">Team Training <span>◆</span></div>
+      <div class="marquee-item">Practical Implementation <span>◆</span></div>
+      <div class="marquee-item">AI Readiness Assessment <span>◆</span></div>
+      <div class="marquee-item">Workflow Automation <span>◆</span></div>
+      <div class="marquee-item">90-Day Roadmap <span>◆</span></div>
+      <div class="marquee-item">Australian SMEs <span>◆</span></div>
+      <div class="marquee-item">No Hype. Real Results. <span>◆</span></div>
+      <div class="marquee-item">Team Training <span>◆</span></div>
+      <div class="marquee-item">Practical Implementation <span>◆</span></div>
+    </div>
+  </div>
 
-    <!-- WHAT WE DO -->
-    <section id="services" class="section section-alt">
-      <h2>What Ignition Agency Does</h2>
-      <p class="section-sub">
-        We assess your business, identify what's worth automating, and help you implement it — without wasting months on tools that don't fit.
-      </p>
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="5">0</span>
+      <div class="stat-label">Dimensions assessed</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number" data-count="90">0</span>
+      <div class="stat-label">Day roadmap included</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number">30</span>
+      <div class="stat-label">Days to first results</div>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-number">AU</span>
+      <div class="stat-label">Built for Australia</div>
+    </div>
+  </div>
+
+  <!-- PAIN POINTS -->
+  <section class="section" id="problems">
+    <div class="eyebrow reveal">Sound familiar?</div>
+    <h2 class="reveal">You already know AI matters.<br>You just don't know <em>where to start.</em></h2>
+    <p class="section-sub reveal">These are the most common things we hear from SME owners before they work with us.</p>
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="card-icon">🌀</span>
+        <h3>"I know I need AI but I don't know where to start."</h3>
+        <p>You've read the articles, watched the demos, maybe signed up for a tool or two. But nothing has actually changed how your business runs.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-icon">⚡</span>
+        <h3>"We tried a few tools and it was a waste of time."</h3>
+        <p>Tools don't fail because AI doesn't work. They fail because nobody assessed whether your business was ready for them first.</p>
+      </article>
+      <article class="card reveal">
+        <span class="card-icon">🚀</span>
+        <h3>"I don't have an IT team to figure this out."</h3>
+        <p>Enterprise companies have whole departments for this. You have yourself and a to-do list that's already too long. That's exactly the gap Ignition fills.</p>
+      </article>
+    </div>
+  </section>
+
+  <hr class="h-rule">
+
+  <!-- SERVICES -->
+  <div class="section-full section-alt" id="services">
+    <div class="inner section">
+      <div class="eyebrow reveal">What We Do</div>
+      <h2 class="reveal">Three ways we <em>light the fuse</em><br>on your AI transformation</h2>
+      <p class="section-sub reveal">We assess your business, identify what's worth automating, and help you implement it — without wasting months on tools that don't fit.</p>
       <div class="grid-3">
-        <article class="card">
+        <article class="card reveal">
+          <span class="card-icon">🔭</span>
           <h3>AI Readiness Assessment</h3>
           <p>A structured audit of your business across five dimensions: data quality, process documentation, team readiness, tech stack, and budget realism.</p>
           <ul>
@@ -124,7 +940,8 @@
             <li>Get a clear 90-day roadmap tailored to your business</li>
           </ul>
         </article>
-        <article class="card">
+        <article class="card reveal">
+          <span class="card-icon">⚙️</span>
           <h3>Implementation & Automation</h3>
           <p>Once you know what to build, we help you build it. Practical automation that fits your existing tools and your team's actual capabilities.</p>
           <ul>
@@ -133,7 +950,8 @@
             <li>Systems your team will actually use, not abandon after a week</li>
           </ul>
         </article>
-        <article class="card">
+        <article class="card reveal">
+          <span class="card-icon">🛰️</span>
           <h3>Ongoing Advisory Retainer</h3>
           <p>AI is moving fast. A monthly retainer keeps your business ahead — not constantly catching up.</p>
           <ul>
@@ -143,38 +961,52 @@
           </ul>
         </article>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- HOW IT WORKS -->
-    <section id="how" class="section">
-      <h2>How It Works</h2>
-      <p class="section-sub">Three steps from where you are now to a business that actually uses AI effectively.</p>
-      <div class="stack-grid">
-        <div class="stack-layer">
-          <h3>1. Discovery Call (Free)</h3>
-          <p>30 minutes. We talk about your business, your current tools, and what you're trying to achieve. No pitch, no pressure — just an honest conversation about whether we're the right fit.</p>
-        </div>
-        <div class="stack-layer">
-          <h3>2. AI Readiness Assessment</h3>
-          <p>A structured audit across your operations. You get a scored report, a ranked list of automation opportunities, and a 90-day roadmap — whether you work with us further or not.</p>
-        </div>
-        <div class="stack-layer">
-          <h3>3. Build & Implement</h3>
-          <p>We work through the roadmap together. Implementation, team training, and the ongoing support to make sure it sticks. Most clients see meaningful time savings within the first 30 days.</p>
-        </div>
+  <hr class="h-rule">
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="eyebrow reveal">The Process</div>
+    <h2 class="reveal">Three steps to <em>lift-off</em></h2>
+    <p class="section-sub reveal">From where you are now to a business that actually uses AI effectively.</p>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-circle">📡</div>
+        <h3>Discovery Call (Free)</h3>
+        <p>30 minutes. We talk about your business, your current tools, and what you're trying to achieve. No pitch, no pressure — just an honest conversation about fit.</p>
       </div>
-    </section>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-circle">🔬</div>
+        <h3>AI Readiness Assessment</h3>
+        <p>A structured audit across your operations. You get a scored report, a ranked list of automation opportunities, and a 90-day roadmap — whether you proceed or not.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-circle">🚀</div>
+        <h3>Build & Implement</h3>
+        <p>We work through the roadmap together. Implementation, team training, and the ongoing support to make sure it sticks. Most clients see results within the first 30 days.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-alt">
-      <h2>Why Listen to Us</h2>
+  <hr class="h-rule">
+
+  <!-- ABOUT -->
+  <div class="section-full section-alt" id="about">
+    <div class="inner section">
+      <div class="eyebrow reveal">Why Listen to Us</div>
+      <h2 class="reveal">Corporate rigour.<br><em>SME price tag.</em></h2>
       <div class="split">
         <div>
-          <p>Ignition Agency was founded by Adam Flint — a Lead Instructional Designer with over a decade of experience helping large Australian organisations adopt complex technology at scale.</p>
-          <p>The difference between a corporate digital transformation that works and one that doesn't isn't the technology. It's whether the people, processes, and data are ready for it. Most AI consultants don't know this because they've never had to implement anything inside a real organisation.</p>
-          <p>Ignition brings that same rigour — the assessment frameworks, the change management thinking, the practical implementation experience — to SMEs who deserve it just as much as the big end of town.</p>
+          <p class="reveal">Ignition Agency was founded by Adam Flint — a Lead Instructional Designer with over a decade of experience helping large Australian organisations adopt complex technology at scale.</p>
+          <p class="reveal">The difference between a corporate digital transformation that works and one that doesn't isn't the technology. It's whether the people, processes, and data are ready for it. Most AI consultants don't know this because they've never had to implement anything inside a real organisation.</p>
+          <p class="reveal">Ignition brings that same rigour — the assessment frameworks, the change management thinking, the practical implementation experience — to SMEs who deserve it just as much as the big end of town.</p>
         </div>
-        <div class="about-highlights">
+        <div class="highlight-box reveal">
           <h3>What you get that others don't offer</h3>
           <ul>
             <li>Assessment-first — we diagnose before we prescribe</li>
@@ -184,154 +1016,338 @@
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section">
-      <h2>Engagement Options</h2>
-      <p class="section-sub">Start with an assessment, then decide what makes sense next.</p>
-      <div class="pricing-grid">
-        <div class="card">
-          <h3>AI Readiness Assessment</h3>
-          <p class="price">AUD $1,500</p>
-          <p class="tagline">You'll know exactly where your business stands, what's worth automating first, and what to do in the next 90 days — before spending a cent on tools.</p>
-          <ul>
-            <li>Scored audit across 5 dimensions</li>
-            <li>Ranked list of automation opportunities by ROI</li>
-            <li>Personalised 90-day roadmap</li>
-            <li>90-minute debrief session</li>
-            <li>Written report you keep forever</li>
-          </ul>
-        </div>
-        <div class="card card-highlight">
-          <h3>Assessment + Implementation</h3>
-          <p class="price">AUD $4,500–$7,500</p>
-          <p class="tagline">You'll walk away with real automations running in your business, your team trained to use them, and hours back every single week.</p>
-          <ul>
-            <li>Everything in the Assessment</li>
-            <li>Hands-on build of your top 2–3 automations</li>
-            <li>Team training and full handover</li>
-            <li>30-day post-launch check-in</li>
-            <li>Documented SOPs so nothing lives in someone's head</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Monthly Advisory Retainer</h3>
-          <p class="price">AUD $750/month</p>
-          <p class="tagline">You'll always know what's worth your attention in AI — and what isn't. No more chasing every new tool or falling behind competitors who moved faster.</p>
-          <ul>
-            <li>Monthly strategy and optimisation session</li>
-            <li>Ongoing support as your needs evolve</li>
-            <li>Early heads-up on tools relevant to your business</li>
-            <li>Priority response — a real person who knows your business</li>
-            <li>Cancel anytime</li>
-          </ul>
-        </div>
+  <hr class="h-rule">
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="eyebrow reveal">Engagement Options</div>
+    <h2 class="reveal">Transparent pricing.<br><em>No surprises.</em></h2>
+    <p class="section-sub reveal">Start with an assessment, then decide what makes sense next.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <h3>AI Readiness Assessment</h3>
+        <div class="price">$1,500 <span>AUD</span></div>
+        <p class="tagline">Know exactly where your business stands, what's worth automating first, and what to do in the next 90 days — before spending a cent on tools.</p>
+        <ul>
+          <li>Scored audit across 5 dimensions</li>
+          <li>Ranked automation opportunities by ROI</li>
+          <li>Personalised 90-day roadmap</li>
+          <li>90-minute debrief session</li>
+          <li>Written report you keep forever</li>
+        </ul>
+        <br>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:1.5rem">Get started →</a>
       </div>
-      <p style="text-align:center;margin-top:2rem;color:var(--muted);font-size:0.9rem">
-        Want to start smaller? Grab one of our self-serve playbooks from the
-        <a href="shop.html" style="color:var(--accent-soft)">Ignition Shop →</a>
-      </p>
-    </section>
+      <div class="pricing-card featured reveal">
+        <h3>Assessment + Implementation</h3>
+        <div class="price">$4,500–$7,500 <span>AUD</span></div>
+        <p class="tagline">Walk away with real automations running in your business, your team trained to use them, and hours back every single week.</p>
+        <ul>
+          <li>Everything in the Assessment</li>
+          <li>Hands-on build of your top 2–3 automations</li>
+          <li>Team training and full handover</li>
+          <li>30-day post-launch check-in</li>
+          <li>Documented SOPs — nothing lives in someone's head</li>
+        </ul>
+        <br>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1.5rem">Book a call →</a>
+      </div>
+      <div class="pricing-card reveal">
+        <h3>Monthly Advisory Retainer</h3>
+        <div class="price">$750 <span>AUD/month</span></div>
+        <p class="tagline">Always know what's worth your attention in AI — and what isn't. No more chasing every new tool or falling behind competitors who moved faster.</p>
+        <ul>
+          <li>Monthly strategy & optimisation session</li>
+          <li>Ongoing support as your needs evolve</li>
+          <li>Early heads-up on relevant tools</li>
+          <li>Priority response — a real person who knows your business</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <br>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:1.5rem">Get started →</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;color:var(--muted);font-size:0.85rem;font-family:var(--mono)">
+      Want to start smaller? Grab a self-serve playbook from the <a href="shop.html">Ignition Shop →</a>
+    </p>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section section-alt">
-      <h2>Book a Free Discovery Call</h2>
-      <p class="section-sub">30 minutes. No pitch, no pressure. Just an honest conversation about where your business is and whether we can help.</p>
-      <div class="split">
-        <form class="contact-form" id="contact-form">
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Business name
-            <input type="text" name="company" />
-          </label>
-          <label>
-            How many staff?
-            <input type="text" name="staff" placeholder="e.g. 12" />
-          </label>
+  <hr class="h-rule">
+
+  <!-- CONTACT -->
+  <div class="section-full section-alt" id="contact">
+    <div class="inner section">
+      <div class="eyebrow reveal">Book a Free Discovery Call</div>
+      <h2 class="reveal">30 minutes.<br><em>No pitch. No pressure.</em></h2>
+      <p class="section-sub reveal">Just an honest conversation about where your business is and whether we can help.</p>
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row">
+            <label>Name <input type="text" name="name" required placeholder="Your name" /></label>
+            <label>Email <input type="email" name="email" required placeholder="you@company.com" /></label>
+          </div>
+          <div class="form-row">
+            <label>Business name <input type="text" name="company" placeholder="Acme Pty Ltd" /></label>
+            <label>How many staff? <input type="text" name="staff" placeholder="e.g. 12" /></label>
+          </div>
           <label>
             What's the biggest thing slowing your business down right now?
-            <textarea name="mainGoal" rows="3" required></textarea>
+            <textarea name="mainGoal" rows="4" required placeholder="Be as specific as you like..."></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Book My Discovery Call</button>
+          <button type="submit" class="btn btn-primary">Book My Discovery Call →</button>
         </form>
-        <div class="contact-side">
-          <h3>Good fit if you are:</h3>
-          <ul>
-            <li>An SME with 5–50 staff</li>
-            <li>Curious about AI but not sure where to start</li>
-            <li>Ready to invest properly — not just dabble</li>
-            <li>Looking for practical outcomes, not demos</li>
-          </ul>
-          <p style="margin-top: 1.5rem;">Or email directly: <a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></p>
+        <div class="contact-info reveal">
+          <div>
+            <h3>Good fit if you are</h3>
+            <ul>
+              <li>An SME with 5–50 staff</li>
+              <li>Curious about AI but not sure where to start</li>
+              <li>Ready to invest properly — not just dabble</li>
+              <li>Looking for practical outcomes, not demos</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Or reach out directly</h3>
+            <ul>
+              <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+              <li><a href="https://linkedin.com/company/ignitionagency" target="_blank" rel="noopener">LinkedIn →</a></li>
+              <li><a href="audit.html">Payday Super Audit →</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <footer class="footer">
-    <div class="footer-col">
-      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
-      <p>SME AI Assessment & Automation. Australian-built, practically focused.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li>AI Readiness Assessment</li>
-        <li>Automation Implementation</li>
-        <li>Monthly Advisory Retainer</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="shop.html">Shop — Playbooks</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
-        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">IGN<span class="logo-dot">·</span>ITION</div>
+        <p>SME AI Assessment & Automation.<br>Australian-built, practically focused.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>AI Readiness Assessment</li>
+          <li>Automation Implementation</li>
+          <li>Monthly Advisory Retainer</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="shop.html">Shop — Playbooks</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="audit.html">Payday Super Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+          <li><a href="https://linkedin.com/company/ignitionagency" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Ignition Agency, operated by Ignition Consulting Pty Ltd · ABN 38 617 040 052. All rights reserved.
+      <span>© 2026 Ignition Agency, operated by Ignition Consulting Pty Ltd · ABN 38 617 040 052</span>
+      <span style="color:var(--accent);font-size:0.65rem">LAUNCH SEQUENCE COMPLETE ◆</span>
     </div>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-links');
-      const btn = document.getElementById('hamburger');
-      nav.classList.toggle('open');
-      btn.classList.toggle('active');
-    }
-    function closeMenu() {
-      document.getElementById('nav-links').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('active');
-    }
-  </script>
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const f = new FormData(this);
-      const body = encodeURIComponent(
-        'Name: ' + (f.get('name')||'') + '\n' +
-        'Email: ' + (f.get('email')||'') + '\n' +
-        'Business: ' + (f.get('company')||'') + '\n' +
-        'Staff: ' + (f.get('staff')||'') + '\n' +
-        'Biggest bottleneck: ' + (f.get('mainGoal')||''));
-      window.location.href = 'mailto:hello@ignitionagency.au?subject=' + encodeURIComponent('Discovery Call Request') + '&body=' + body;
+  // ─── THREE.JS SPACE SCENE ───────────────────────────────────────────────────
+  (function() {
+    const canvas = document.getElementById('space-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.z = 1;
+    camera.position.y = 0;
+
+    // Stars
+    function makeStarField(count, spread, size, color) {
+      const geo = new THREE.BufferGeometry();
+      const pos = new Float32Array(count * 3);
+      for (let i = 0; i < count; i++) {
+        pos[i*3]   = (Math.random() - 0.5) * spread;
+        pos[i*3+1] = (Math.random() - 0.5) * spread * 0.6;
+        pos[i*3+2] = (Math.random() - 0.5) * spread - 200;
+      }
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      const mat = new THREE.PointsMaterial({ color, size, sizeAttenuation: true, transparent: true, opacity: 0.8 });
+      return new THREE.Points(geo, mat);
+    }
+
+    const stars1 = makeStarField(3000, 2000, 0.6, 0xffffff);
+    const stars2 = makeStarField(1000, 2000, 1.2, 0x8ab4ff);
+    const stars3 = makeStarField(500,  2000, 2.0, 0xff8866);
+    scene.add(stars1, stars2, stars3);
+
+    // Nebula particles (blue/purple cloud)
+    const nebulaGeo = new THREE.BufferGeometry();
+    const nebulaPos = new Float32Array(800 * 3);
+    for (let i = 0; i < 800; i++) {
+      const theta = Math.random() * Math.PI * 2;
+      const r = 80 + Math.random() * 120;
+      nebulaPos[i*3]   = Math.cos(theta) * r;
+      nebulaPos[i*3+1] = (Math.random() - 0.5) * 60;
+      nebulaPos[i*3+2] = Math.sin(theta) * r - 300;
+    }
+    nebulaGeo.setAttribute('position', new THREE.BufferAttribute(nebulaPos, 3));
+    const nebulaMat = new THREE.PointsMaterial({ color: 0x4f7cff, size: 3, sizeAttenuation: true, transparent: true, opacity: 0.08 });
+    scene.add(new THREE.Points(nebulaGeo, nebulaMat));
+
+    // Mouse parallax
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', e => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 0.3;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 0.15;
     });
+
+    // Scroll warp
+    let scrollY = 0;
+    window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+    let frame = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      frame++;
+
+      // Slow rotation
+      stars1.rotation.y += 0.0001;
+      stars2.rotation.y -= 0.00008;
+      stars3.rotation.z += 0.00005;
+
+      // Mouse parallax
+      camera.position.x += (mouseX - camera.position.x) * 0.02;
+      camera.position.y += (-mouseY - camera.position.y) * 0.02;
+
+      // Scroll depth effect — move camera into the star field
+      camera.position.z = 1 + scrollY * 0.002;
+
+      // Twinkle
+      nebulaMat.opacity = 0.06 + Math.sin(frame * 0.01) * 0.02;
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
+  })();
+
+  // ─── CUSTOM CURSOR ──────────────────────────────────────────────────────────
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let cx = 0, cy = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+  function animCursor() {
+    cursor.style.left = cx + 'px';
+    cursor.style.top  = cy + 'px';
+    rx += (cx - rx) * 0.12;
+    ry += (cy - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animCursor);
+  }
+  animCursor();
+  document.querySelectorAll('a, button, .card').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.classList.add('expand'); ring.classList.add('expand'); });
+    el.addEventListener('mouseleave', () => { cursor.classList.remove('expand'); ring.classList.remove('expand'); });
+  });
+
+  // ─── NAV SCROLL ─────────────────────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // ─── GSAP HERO ENTRANCE ─────────────────────────────────────────────────────
+  gsap.registerPlugin(ScrollTrigger);
+  document.body.classList.add('js-loaded');
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.fromTo('#hero-label', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.3 }, 0)
+    .fromTo('#hero-h1 .word', { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.5)
+    .fromTo('#hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, 1.0)
+    .fromTo('#hero-cta', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, 1.3)
+    .fromTo('#scroll-ind', { opacity: 0 }, { opacity: 1, duration: 1 }, 1.8);
+
+  // ─── SCROLL REVEALS ─────────────────────────────────────────────────────────
+  gsap.utils.toArray('.reveal').forEach((el) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+
+  // ─── NUMBER COUNT-UP ────────────────────────────────────────────────────────
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseInt(el.dataset.count);
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 80%',
+      onEnter: () => {
+        gsap.to({ val: 0 }, {
+          val: target,
+          duration: 2,
+          ease: 'power1.out',
+          onUpdate: function() {
+            el.textContent = Math.round(this.targets()[0].val);
+          }
+        });
+      }
+    });
+  });
+
+  // ─── NAV HELPERS ────────────────────────────────────────────────────────────
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('active');
+  }
+  function closeMenu() {
+    document.getElementById('nav-links').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('active');
+  }
+
+  // ─── CONTACT FORM ───────────────────────────────────────────────────────────
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const f = new FormData(this);
+    const body = encodeURIComponent(
+      'Name: ' + (f.get('name')||'') + '\n' +
+      'Email: ' + (f.get('email')||'') + '\n' +
+      'Business: ' + (f.get('company')||'') + '\n' +
+      'Staff: ' + (f.get('staff')||'') + '\n' +
+      'Biggest bottleneck: ' + (f.get('mainGoal')||''));
+    window.location.href = 'mailto:hello@ignitionagency.au?subject=' + encodeURIComponent('Discovery Call Request') + '&body=' + body;
+  });
   </script>
 </body>
 </html>
