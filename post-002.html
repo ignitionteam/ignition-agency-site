@@ -7,8 +7,8 @@
   <meta name="description" content="Everyone's trying AI tools. Most are disappointed. The reason isn't the AI — it's the data underneath it. A framework for Australian SMBs." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ9K6GL853"></script>
   <script>
@@ -35,193 +35,67 @@
     "description": "Everyone's trying AI tools. Most are disappointed. The reason isn't the AI — it's the data underneath it. A framework for Australian SMBs.",
     "url": "https://ignitionagency.au/post-002.html",
     "datePublished": "2026-03-17",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Ignition Agency",
-      "url": "https://ignitionagency.au"
-    }
+    "publisher": { "@type": "Organization", "name": "Ignition Agency", "url": "https://ignitionagency.au" }
   }
   </script>
   <style>
-    .post-hero {
-      padding: 5rem 5vw 2.5rem;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .post-hero .eyebrow {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent-soft);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .post-hero h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      line-height: 1.15;
-      margin: 0 0 1.25rem;
-    }
-
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-
-    .post-meta .meta-sep {
-      color: var(--border);
-    }
-
-    .post-body {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 5vw 4rem;
-    }
-
-    .post-body p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-      font-size: 1rem;
-    }
-
-    .post-body h2 {
-      font-size: 1.35rem;
-      color: var(--text);
-      margin: 2.5rem 0 0.75rem;
-    }
-
-    .post-body strong {
-      color: var(--text);
-    }
-
-    .post-body ul {
-      color: var(--muted);
-      line-height: 1.8;
-      padding-left: 1.25rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .post-body ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-callout {
-      border-left: 3px solid var(--accent);
-      padding: 0.75rem 1.25rem;
-      margin: 1.5rem 0;
-      background: rgba(245, 166, 35, 0.06);
-      border-radius: 0 0.5rem 0.5rem 0;
-      color: var(--text) !important;
-      font-weight: 600;
-      font-size: 1.05rem !important;
-    }
-
-    .framework-box {
-      border-radius: 0.75rem;
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      background: linear-gradient(90deg, rgba(245, 166, 35, 0.06), transparent);
-      margin: 2rem 0;
-    }
-
-    .framework-box h3 {
-      margin: 0 0 1rem;
-      font-size: 1rem;
-      color: var(--accent-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.8rem;
-    }
-
-    .framework-box ul {
-      margin: 0;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 2.5rem;
-      transition: color 0.2s;
-    }
-    .back-link:hover {
-      color: var(--accent-soft);
-    }
-
-    .post-cta {
-      margin: 3rem 0 0;
-      padding: 2.5rem;
-      border-radius: 1rem;
-      background: rgba(245, 166, 35, 0.06);
-      border: 1px solid rgba(245, 166, 35, 0.3);
-      text-align: center;
-    }
-
-    .post-cta h3 {
-      font-size: 1.35rem;
-      margin: 0 0 0.75rem;
-    }
-
-    .post-cta p {
-      color: var(--muted);
-      margin: 0 0 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .post-hero {
-        padding: 3.5rem 5vw 1.5rem;
-      }
-      .post-body {
-        padding: 0 5vw 3rem;
-      }
-    }
+    .post-hero { position: relative; z-index: 1; padding: 9rem 5vw 2.5rem; max-width: 780px; margin: 0 auto; }
+    .post-hero h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.15; margin: 0 0 1.5rem; }
+    .post-meta { display: flex; align-items: center; gap: 1rem; color: var(--muted); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; flex-wrap: wrap; }
+    .post-meta .meta-sep { color: var(--border); }
+    .back-link { font-family: var(--mono); display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); font-size: 0.72rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2rem; transition: color 0.2s, gap 0.2s; }
+    .back-link:hover { color: var(--accent); gap: 0.7rem; }
+    .post-body { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 0 5vw 6rem; }
+    .post-body p { color: var(--muted); line-height: 1.85; margin-bottom: 1.35rem; font-size: 1.02rem; }
+    .post-body h2 { font-size: 1.5rem; color: var(--text); margin: 3rem 0 1rem; }
+    .post-body strong { color: var(--text); }
+    .post-body ul { color: var(--muted); line-height: 1.8; list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .post-body ul li { padding-left: 1.5rem; position: relative; }
+    .post-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+    .stat-callout { border-left: 3px solid var(--accent); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(79,124,255,0.06); border-radius: 0 0.5rem 0.5rem 0; color: var(--text) !important; font-weight: 600; font-size: 1.05rem !important; line-height: 1.6 !important; }
+    .framework-box { border-radius: 4px; border: 1px solid var(--border); padding: 2rem; background: linear-gradient(90deg, rgba(79,124,255,0.06), transparent); margin: 2.5rem 0; }
+    .framework-box h3 { margin: 0 0 1.25rem; font-family: var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+    .framework-box ul { margin: 0; }
+    .post-cta { margin: 3.5rem 0 0; padding: 2.75rem; border-radius: 4px; background: linear-gradient(160deg, rgba(79,124,255,0.1), rgba(0,212,255,0.05)); border: 1px solid var(--border); text-align: center; }
+    .post-cta h3 { font-size: 1.5rem; margin: 0 0 0.75rem; }
+    .post-cta p { color: var(--muted); margin: 0 0 1.75rem; line-height: 1.7; }
+    @media (max-width: 900px) { .post-hero { padding: 7.5rem 5vw 1.5rem; } .post-body { padding: 0 5vw 4rem; } }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-left">
-      <a href="index.html" style="text-decoration:none"><span class="logo-text">IGNITION</span><span class="logo-sub">AGENCY</span></a>
-    </div>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html#hero" onclick="closeMenu()">Home</a>
-      <a href="index.html#services" onclick="closeMenu()">What We Do</a>
-      <a href="index.html#stack" onclick="closeMenu()">Ignition Stack</a>
-      <a href="index.html#case-studies" onclick="closeMenu()">Case Studies</a>
-      <a href="index.html#about" onclick="closeMenu()">About</a>
-      <a href="index.html#pricing" onclick="closeMenu()">Pricing</a>
-      <a href="index.html#contact" onclick="closeMenu()">Contact</a>
-      <a href="blog.html" onclick="closeMenu()" style="color: var(--accent-soft)">Blog</a>
-      <a href="shop.html" onclick="closeMenu()" style="color: var(--accent)">Shop</a>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <canvas id="space-canvas"></canvas>
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="logo-text">IGN<span class="logo-dot">·</span>ITION</a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="index.html#how" onclick="closeMenu()">How it works</a></li>
+        <li><a href="index.html#pricing" onclick="closeMenu()">Pricing</a></li>
+        <li><a href="audit.html" onclick="closeMenu()">Payday Super Audit</a></li>
+        <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
+        <li><a href="shop.html" onclick="closeMenu()">Shop</a></li>
+        <li><a href="index.html#contact" class="cta-link" onclick="closeMenu()">Book a call →</a></li>
+      </ul>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </header>
 
   <main>
     <div class="post-hero">
       <a href="blog.html" class="back-link">← Back to Insights</a>
-      <span class="eyebrow">AI &amp; Data Strategy</span>
+      <div class="eyebrow">AI &amp; Data Strategy</div>
       <h1>Why Your Business Isn't Ready for AI (And It's Not What You Think)</h1>
       <div class="post-meta">
         <span>March 17, 2026</span>
-        <span class="meta-sep">|</span>
+        <span class="meta-sep">◆</span>
         <span>Ignition Agency</span>
-        <span class="meta-sep">|</span>
+        <span class="meta-sep">◆</span>
         <span>7 min read</span>
       </div>
     </div>
@@ -300,49 +174,51 @@
       <div class="post-cta">
         <h3>Take the AI Readiness Audit</h3>
         <p>Find out exactly where your data foundations are strong and where the gaps are — before you spend another dollar on AI tooling.</p>
-        <a href="index.html#contact" class="btn btn-primary">Book a free 20-minute discovery call</a>
+        <a href="index.html#contact" class="btn btn-primary">Book a free 20-minute discovery call →</a>
       </div>
 
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-col">
-      <div class="logo-text">IGNITION<span class="logo-sub">AGENCY</span></div>
-      <p>AI • Automation • Analytics for modern brands.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li>AI System Design</li>
-        <li>Analytics &amp; Dashboards</li>
-        <li>Automation Workflows</li>
-        <li>Ecommerce &amp; Shopify Systems</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
-        <li><a href="https://linkedin.com/company/ignitionagency" target="_blank">LinkedIn</a></li>
-      </ul>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text">IGN<span class="logo-dot">·</span>ITION</a>
+        <p>SME AI Assessment &amp; Automation.<br>Australian-built, practically focused.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>AI Readiness Assessment</li>
+          <li>Automation Implementation</li>
+          <li>Monthly Advisory Retainer</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="shop.html">Shop — Playbooks</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="audit.html">Payday Super Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@ignitionagency.au">hello@ignitionagency.au</a></li>
+          <li><a href="https://linkedin.com/company/ignitionagency" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Ignition Agency. All rights reserved.
+      <span>© 2026 Ignition Agency, operated by Ignition Consulting Pty Ltd · ABN 38 617 040 052</span>
+      <span style="color:var(--accent);font-size:0.65rem">LAUNCH SEQUENCE COMPLETE ◆</span>
     </div>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-links');
-      const btn = document.getElementById('hamburger');
-      nav.classList.toggle('open');
-      btn.classList.toggle('active');
-    }
-    function closeMenu() {
-      document.getElementById('nav-links').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('active');
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
